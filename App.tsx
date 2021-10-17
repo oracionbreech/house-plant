@@ -4,7 +4,19 @@ import Navigator from "./src/routes/Navigator";
 
 export default function App() {
   return (
-    <NavigationContainer>
+    <NavigationContainer
+      theme={{
+        colors: {
+          primary: "black",
+          background: "white",
+          card: "black",
+          text: "black",
+          border: "black",
+          notification: "black",
+        },
+        dark: false,
+      }}
+    >
       <Navigator />
     </NavigationContainer>
   );
