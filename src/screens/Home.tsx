@@ -6,10 +6,11 @@ import { HomeScreenProps } from "./RootStackParams";
 
 import { useFonts, Montserrat_500Medium } from "@expo-google-fonts/dev";
 import { homeStyles } from "./home.stylesheet";
+import { Loading } from "../components/Loading";
 
 // Styles
 
-const { subHeaderText, container, header, headerText, loadingContainer } =
+const { headerGroup, subHeaderText, container, header, headerText } =
   homeStyles;
 
 export const Home: React.FC<{}> = ({}) => {
@@ -21,17 +22,24 @@ export const Home: React.FC<{}> = ({}) => {
     navigate("About");
   };
 
-  return loaded ? (
+  const addPlants = () => {};
+
+  if (!loaded) {
+    return <Loading />;
+  }
+
+  return (
     <View style={container}>
       <Icon name="ellipsis-horizontal-outline" size={40} onPress={onPress} />
       <View style={header}>
-        <Text style={headerText}>My Garden</Text>
-        <Text style={subHeaderText}>(you have 5 plants)</Text>
+        <View>
+          <Text style={headerText}>My Garden</Text>
+          <Text style={subHeaderText}>(you have 5 plants)</Text>
+        </View>
+        <View style={headerGroup}>
+          <Icon name="add-circle" size={40} onPress={addPlants} />
+        </View>
       </View>
-    </View>
-  ) : (
-    <View style={loadingContainer}>
-      <ActivityIndicator size="large" />
     </View>
   );
 };
