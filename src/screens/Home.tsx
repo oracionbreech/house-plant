@@ -4,10 +4,9 @@ import Icon from "react-native-vector-icons/Ionicons";
 import { useNavigation } from "@react-navigation/core";
 import { HomeScreenProps } from "./RootStackParams";
 
-import { useFonts, Montserrat_500Medium } from "@expo-google-fonts/dev";
+import { useFonts, Montserrat_500Medium } from "@expo-google-fonts/montserrat";
 import { homeStyles } from "./home.stylesheet";
 import { Loading } from "../components/Loading";
-
 // Styles
 
 const { headerGroup, subHeaderText, container, header, headerText } =
