@@ -1,7 +1,5 @@
 import { NavigationContainer } from "@react-navigation/native";
-import { StatusBar } from "expo-status-bar";
-import React, { useEffect } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import React from "react";
 import Navigator from "./src/routes/Navigator";
 
 export default function App() {
