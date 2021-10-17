@@ -13,7 +13,7 @@ export default function App() {
     <AppLoading
       startAsync={async () => {
         await Font.loadAsync({
-          Montserrat_500Medium: Montserrat_500Medium,
+          Montserrat: Montserrat_500Medium,
         });
         setReady(true);
       }}

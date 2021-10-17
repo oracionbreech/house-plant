@@ -1,10 +1,7 @@
 import { useNavigation } from "@react-navigation/core";
-import { RouteProp } from "@react-navigation/native";
 import React from "react";
 import { Text, View } from "react-native";
 
-import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { StackNavigationProp } from "@react-navigation/stack";
 import { AboutScreenProps } from "./RootStackParams";
 
 export const About: React.FC<{}> = ({}) => {

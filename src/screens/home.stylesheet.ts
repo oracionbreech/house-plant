@@ -18,11 +18,11 @@ export const homeStyles = StyleSheet.create({
     headerText: {
         width: 'auto',
         fontSize: 35,
-        fontFamily: "Montserrat_500Medium",
+        fontFamily: "Montserrat",
     },
     subHeaderText: {
         fontSize: 15,
-        fontFamily: "Montserrat_500Medium",
+        fontFamily: "Montserrat",
         color: '#d3d3d3',
     }
 });
