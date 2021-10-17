@@ -1,23 +1,27 @@
 import { NavigationContainer } from "@react-navigation/native";
-import React from "react";
-import Navigator from "./src/routes/Navigator";
+import React, { useEffect, useState } from "react";
+import * as Font from "expo-font";
+import { Montserrat_500Medium } from "@expo-google-fonts/montserrat";
+import AppLoading from "expo-app-loading";
+import { registerRootComponent } from "expo";
+import { Navigation } from "./src/screens";
 
 export default function App() {
-  return (
-    <NavigationContainer
-      theme={{
-        colors: {
-          primary: "black",
-          background: "white",
-          card: "black",
-          text: "black",
-          border: "black",
-          notification: "black",
-        },
-        dark: false,
+  const [ready, setReady] = useState(false);
+
+  if (!ready) {
+    <AppLoading
+      startAsync={async () => {
+        await Font.loadAsync({
+          Montserrat_500Medium: Montserrat_500Medium,
+        });
+        setReady(true);
       }}
-    >
-      <Navigator />
-    </NavigationContainer>
-  );
+      onFinish={() => setReady(true)}
+      onError={() => {}}
+    />;
+  }
+
+  return <Navigation />;
 }
+registerRootComponent(App);

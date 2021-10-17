@@ -1,20 +1,16 @@
 import React from "react";
-import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
+import { Text, View } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 import { useNavigation } from "@react-navigation/core";
 import { HomeScreenProps } from "./RootStackParams";
 
-import { useFonts, Montserrat_500Medium } from "@expo-google-fonts/montserrat";
 import { homeStyles } from "./home.stylesheet";
-import { Loading } from "../components/Loading";
-// Styles
 
+// Styles
 const { headerGroup, subHeaderText, container, header, headerText } =
   homeStyles;
 
 export const Home: React.FC<{}> = ({}) => {
-  const [loaded] = useFonts({ Montserrat_500Medium });
-
   const { navigate } = useNavigation<HomeScreenProps>();
 
   const onPress = () => {
@@ -22,10 +18,6 @@ export const Home: React.FC<{}> = ({}) => {
   };
 
   const addPlants = () => {};
-
-  if (!loaded) {
-    return <Loading />;
-  }
 
   return (
     <View style={container}>
