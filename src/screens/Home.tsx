@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { Text, View, TouchableOpacity, SafeAreaView } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 import { useNavigation } from "@react-navigation/core";
 import { HomeScreenProps } from "./RootStackParams";
@@ -20,17 +20,23 @@ export const Home: React.FC<{}> = ({}) => {
   const addPlants = () => {};
 
   return (
-    <View style={container}>
-      <Icon name="ellipsis-horizontal-outline" size={40} onPress={onPress} />
-      <View style={header}>
-        <View>
-          <Text style={headerText}>My Garden</Text>
-          <Text style={subHeaderText}>(you have 5 plants)</Text>
-        </View>
-        <View style={headerGroup}>
-          <Icon name="add-circle" size={40} onPress={addPlants} />
+    <SafeAreaView>
+      <View style={container}>
+        <TouchableOpacity onPress={onPress}>
+          <Icon name="ellipsis-horizontal-outline" size={40} />
+        </TouchableOpacity>
+        <View style={header}>
+          <View>
+            <Text style={headerText}>My Garden</Text>
+            <Text style={subHeaderText}>(you have 5 plants)</Text>
+          </View>
+          <View style={headerGroup}>
+            <TouchableOpacity onPress={addPlants}>
+              <Icon name="add-circle" size={40} />
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };

@@ -13,12 +13,14 @@ export default function App() {
     <AppLoading
       startAsync={async () => {
         await Font.loadAsync({
-          Montserrat: Montserrat_500Medium,
+          Montserrat_500Medium: Montserrat_500Medium,
         });
         setReady(true);
       }}
       onFinish={() => setReady(true)}
-      onError={() => {}}
+      onError={(e) => {
+        console.log("Error loading App!");
+      }}
     />;
   }
 
